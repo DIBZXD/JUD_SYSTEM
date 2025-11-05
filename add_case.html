@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Case - Judiciary Information System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Judiciary Information System</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="cases.html">Cases</a>
+      <a href="add_case.html">Add Case</a>
+      <a href="judges.html">Judges</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="form-section">
+    <h2>Add New Case</h2>
+    <form id="caseForm">
+      <input type="text" id="caseId" placeholder="Case ID" required>
+      <input type="text" id="caseTitle" placeholder="Case Title" required>
+      <input type="text" id="judgeName" placeholder="Judge Name" required>
+      <input type="text" id="status" placeholder="Case Status (Pending/Closed)" required>
+      <input type="date" id="caseDate" required>
+      <button type="submit" class="btn">Add Case</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Judiciary Information System | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('caseForm');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+
+      const newCase = {
+        id: document.getElementById('caseId').value,
+        title: document.getElementById('caseTitle').value,
+        judge: document.getElementById('judgeName').value,
+        status: document.getElementById('status').value,
+        date: document.getElementById('caseDate').value
+      };
+
+      const storedCases = JSON.parse(localStorage.getItem('cases')) || [];
+      storedCases.push(newCase);
+      localStorage.setItem('cases', JSON.stringify(storedCases));
+
+      alert("Case added successfully!");
+      form.reset();
+    });
+  </script>
+</body>
+</html>

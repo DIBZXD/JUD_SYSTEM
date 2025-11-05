@@ -1,0 +1,141 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #121212;
+  color: #fff;
+  text-align: center;
+}
+
+
+header {
+  background: #1e1e1e;
+  padding: 15px 0;
+  box-shadow: 0 0 10px #ff4b8a;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+header h1 {
+  color: #ff4b8a;
+  margin: 0;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  color: #fff;
+  margin: 0 12px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #ff4b8a;
+}
+
+
+.hero {
+  padding: 4rem 1rem;
+}
+
+.btn {
+  background: #ff4b8a;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #ff74a3;
+}
+
+
+.cases-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.case-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  width: 250px;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(255, 75, 138, 0.4);
+  text-align: left;
+}
+
+
+.form-section {
+  padding: 2rem;
+}
+
+form input, form textarea {
+  display: block;
+  width: 80%;
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+
+.judges-section, .contact-section {
+  padding: 2rem;
+}
+
+.judges-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.judge-card {
+  background: rgba(255,255,255,0.08);
+  border-radius: 12px;
+  width: 250px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(255, 75, 138, 0.3);
+}
+
+.judge-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+
+.contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: none;
+}
+
+footer {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: #1e1e1e;
+  color: #bbb;
+}

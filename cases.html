@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cases - Judiciary Information System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Judiciary Information System</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="cases.html">Cases</a>
+      <a href="add_case.html">Add Case</a>
+      <a href="judges.html">Judges</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="cases-section">
+    <h2>All Registered Cases</h2>
+    <div id="cases-list" class="cases-container"></div>
+  </section>
+
+  <footer>
+    <p>© 2025 Judiciary Information System | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    const casesContainer = document.getElementById('cases-list');
+    const storedCases = JSON.parse(localStorage.getItem('cases')) || [];
+
+    if (storedCases.length === 0) {
+      casesContainer.innerHTML = "<p>No cases found. Add a new case!</p>";
+    } else {
+      storedCases.forEach((c, i) => {
+        const card = document.createElement('div');
+        card.className = 'case-card';
+        card.innerHTML = `
+          <h3>Case #${i + 1}</h3>
+          <p><strong>Case ID:</strong> ${c.id}</p>
+          <p><strong>Title:</strong> ${c.title}</p>
+          <p><strong>Judge:</strong> ${c.judge}</p>
+          <p><strong>Status:</strong> ${c.status}</p>
+          <p><strong>Date:</strong> ${c.date}</p>
+        `;
+        casesContainer.appendChild(card);
+      });
+    }
+  </script>
+</body>
+</html>
